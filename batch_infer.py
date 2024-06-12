@@ -38,12 +38,7 @@ def load_model(model_config_path: str, model_checkpoint_path: str, device: str =
 
 class CocoDetection(torchvision.datasets.CocoDetection, Dataset):
     def __init__(self, image_dir, anno_path, transforms=None):
-        """
-        Args:
-            image_dir (string): 包含图像文件的根目录路径            C:\\Users\\曾煜\\OneDrive\\桌面\\Lvis\\train2017
-            anno_path (string): 文件里包含image_path、key_words    C:\\Users\\曾煜\\OneDrive\\桌面\\Lvis\\train2017_entity_bbox.jsonl
-            transform (callable, optional): 对样本进行任何必要的变换
-        """
+
         self.image_dir = image_dir 
         self.transform = transforms
         self.image_data = [ json.loads(item) for item in open(anno_path, 'r', encoding='utf-8')]

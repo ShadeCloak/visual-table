@@ -42,8 +42,8 @@ def get_output(prompt: str, base64_image: str, max_tokens: int=1024):
     while True:
         try:
             client = OpenAI(api_key='<KEY>')
-            client.api_key = 'sk-31S7XYPRdVQt2OkrF4415d92E269416a8974CbF0BaC4A268'
-            client.base_url = 'https://api.gptplus5.com/v1'
+            client.api_key = ''
+            client.base_url = ''
             response = client.chat.completions.create(
                 model='gpt-4-vision-preview',
                 messages=[
